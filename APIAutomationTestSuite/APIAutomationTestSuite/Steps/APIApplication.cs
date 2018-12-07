@@ -12,25 +12,25 @@ namespace APIAutomationTestSuite.Steps
         [Given(@"I have a endpoint (.*)")]
         public void GivenIHaveAEndpointEndpoint(string endpoint)
         {
-            ScenarioContext.Current.Pending();
+            RestApiHelper.SetUrl(endpoint);
         }
 
-        [Given(@"I have base url (.*)")]
-        public void GivenIHaveBaseUrl(string baseURL)
-        {
-            ScenarioContext.Current.Pending();
-        }
+        //[Given(@"I have base url (.*)")]
+        //public void GivenIHaveBaseUrl(string baseURL)
+        //{
+        //    ScenarioContext.Current.Pending();
+        //}
 
         [When(@"I call get method of api")]
         public void WhenICallGetMethodOfApi()
         {
-            ScenarioContext.Current.Pending();
+            RestApiHelper.CreateRequest();
         }
 
         [Then(@"I get API response in json format")]
         public void ThenIGetAPIResponseInJsonFormat()
         {
-            ScenarioContext.Current.Pending();
+            var apiResponse = RestApiHelper.GetResponse();
         }
 
     }
