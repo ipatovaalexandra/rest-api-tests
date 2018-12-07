@@ -16,7 +16,8 @@ namespace APIAutomationTestSuite
 
         public static RestClient SetUrl(string endpoint)
         {
-            var url = Path.Combine(baseUrl, endpoint);
+            Path.Combine(baseUrl, endpoint); // 
+            var url = string.Format("{0}/{1}", baseUrl, endpoint);
             return client = new RestClient(url);
         }
 

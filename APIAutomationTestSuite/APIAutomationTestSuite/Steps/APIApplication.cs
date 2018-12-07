@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,12 @@ namespace APIAutomationTestSuite.Steps
         [Then(@"I get API response in json format")]
         public void ThenIGetAPIResponseInJsonFormat()
         {
-            var apiResponse = RestApiHelper.GetResponse();
+            var expected = "something";
+            var response = RestApiHelper.GetResponse();
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                Assert.That(response.Content, Is.EqualTo(expected), "Error Message");
+            }
         }
 
     }
