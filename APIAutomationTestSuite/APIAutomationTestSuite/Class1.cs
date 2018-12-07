@@ -8,5 +8,6 @@ namespace APIAutomationTestSuite
 {
     public class Class1
     {
+        //
     }
 }
