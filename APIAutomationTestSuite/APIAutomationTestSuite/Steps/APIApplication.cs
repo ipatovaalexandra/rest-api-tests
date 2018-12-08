@@ -39,5 +39,18 @@ namespace APIAutomationTestSuite.Steps
             }
         }
 
+        [When(@"I call get method to get user information using (.*)")]
+        public void WhenICallGetMethodToGetUserInformationUsingUser(string userId)
+        {
+            RestApiHelper.CreateRequest(userId);
+        }
+        
+        [Then(@"I will get user information")]
+        public void ThenIWillGetUserInformation()
+        {
+            var response = RestApiHelper.GetResponse();
+        }
+
+
     }
 }

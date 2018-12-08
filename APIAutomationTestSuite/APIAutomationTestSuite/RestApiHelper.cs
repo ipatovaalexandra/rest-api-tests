@@ -28,6 +28,14 @@ namespace APIAutomationTestSuite
             return restRequest;
         }
 
+        public static RestRequest CreateRequest(string userId)
+        {
+            var resource = userId;
+            restRequest = new RestRequest(resource, Method.GET);
+            restRequest.AddHeader("Accept", "application/json");
+            return restRequest;
+        }
+
         public static IRestResponse GetResponse()
         {
             return client.Execute(restRequest);
