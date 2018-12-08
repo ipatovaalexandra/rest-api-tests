@@ -28,10 +28,23 @@ namespace APIAutomationTestSuite
             return restRequest;
         }
 
+        //http://mydomain.com/userinformation/userid
+
         public static RestRequest CreateRequest(string userId)
         {
             var resource = userId;
             restRequest = new RestRequest(resource, Method.GET);
+            restRequest.AddHeader("Accept", "application/json");
+            return restRequest;
+        }
+
+        //http://mydomain.com/userinformation/userid/AccountInformation?account={accountNumber}
+
+        public static RestRequest CreateRequest(string userId, long accountNumber)
+        {
+            var resource = userId + "AccountInformation?account={accountNumber}";
+            restRequest = new RestRequest(resource, Method.GET);
+            restRequest.AddParameter("accountNumber", accountNumber, ParameterType.UrlSegment);
             restRequest.AddHeader("Accept", "application/json");
             return restRequest;
         }

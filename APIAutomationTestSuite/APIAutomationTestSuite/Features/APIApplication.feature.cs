@@ -111,14 +111,14 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void GetUserInformaionUsingUserid(string userid, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get user informaion using userid", null, exampleTags);
-#line 11
+#line 12
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 12
- testRunner.Given("I have a endpoint / userInformation/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
- testRunner.When(string.Format("I call get method to get user information using {0}", userid), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have a endpoint /userInformation/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
+ testRunner.When(string.Format("I call get method to get user information using {0}", userid), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
  testRunner.Then("I will get user information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -132,8 +132,38 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:userid", "user10001")]
         public virtual void GetUserInformaionUsingUserid_UserInfo_User10001()
         {
-#line 11
+#line 12
  this.GetUserInformaionUsingUserid("user10001", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GetUserAccountInformationUsingUseridAndAccountnumber(string userid, string accountNumber, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get user account information using userid and accountnumber", null, exampleTags);
+#line 22
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 23
+ testRunner.Given("I have a endpoint /userInformation/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+ testRunner.When(string.Format("I call get method to get user account information using {0} and {1}", userid, accountNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
+ testRunner.Then("I will get user account information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get user account information using userid and accountnumber: user10001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "APIApplication")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "User Info")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "user10001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:userid", "user10001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:accountNumber", "123456789")]
+        public virtual void GetUserAccountInformationUsingUseridAndAccountnumber_UserInfo_User10001()
+        {
+#line 22
+ this.GetUserAccountInformationUsingUseridAndAccountnumber("user10001", "123456789", ((string[])(null)));
 #line hidden
         }
     }
