@@ -166,6 +166,36 @@ this.ScenarioInitialize(scenarioInfo);
  this.GetUserAccountInformationUsingUseridAndAccountnumber("user10001", "123456789", ((string[])(null)));
 #line hidden
         }
+        
+        public virtual void UserRegistrationForGivenEndpoint(string firstname, string lastname, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User Registration for given endpoint", null, exampleTags);
+#line 31
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 32
+ testRunner.Given("I have a endpoint /user/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 33
+ testRunner.When("I call a post method to register a user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.Then("I will registered successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("User Registration for given endpoint: tej")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "APIApplication")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "User Info")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "tej")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:firstname", "tej")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lastname", "pan")]
+        public virtual void UserRegistrationForGivenEndpoint_UserInfo_Tej()
+        {
+#line 31
+ this.UserRegistrationForGivenEndpoint("tej", "pan", ((string[])(null)));
+#line hidden
+        }
     }
 }
 #pragma warning restore

@@ -67,6 +67,19 @@ namespace APIAutomationTestSuite.Steps
             var response = RestApiHelper.GetResponse();
         }
 
+        [When(@"I call a post method to register a user")]
+        public void WhenICallAPostMethodToRegisterAUser()
+        {
+            RestApiHelper.CreatePostRequest();
+        }
+
+        [Then(@"I will registered successfully")]
+        public void ThenIWillRegisteredSuccessfully()
+        {
+            var response = RestApiHelper.GetResponse();
+            Assert.That(response.StatusCode, Is.EqualTo(201), "User is not registered");
+        }
+
 
     }
 }

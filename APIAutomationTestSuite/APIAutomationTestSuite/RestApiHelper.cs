@@ -53,5 +53,20 @@ namespace APIAutomationTestSuite
         {
             return client.Execute(restRequest);
         }
+
+        public static RestRequest CreatePostRequest()
+        {
+            var userInfo = new UserInformation();
+            userInfo.FirstName = "Tej";
+            userInfo.LastName = "Pal";
+            userInfo.emailAddress = "tejpalchannel@gmail.com";
+            userInfo.DateOfBirth = new DateTime(1981, 1, 1);
+
+            var resourse = "/registration/";
+            restRequest = new RestRequest(resourse, Method.POST);
+            restRequest.AddBody(userInfo);
+            restRequest.AddHeader("Accept", "application/json");
+            return restRequest;
+        }
     }
 }

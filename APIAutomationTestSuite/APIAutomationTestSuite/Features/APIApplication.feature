@@ -27,3 +27,12 @@ Scenario: Get API response using given endpoint
 	Examples: User Info
 	| userid    | accountNumber |
 	| user10001 | 123456789     |
+
+	Scenario Outline: User Registration for given endpoint
+	Given I have a endpoint /user/
+	When I call a post method to register a user
+	Then I will registered successfully
+
+	Examples: User Info
+	| firstname | lastname |
+	| tej       | pan      |
